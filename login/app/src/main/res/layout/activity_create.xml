@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jz651.login.CreateActivity">
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="type a subject you want"
+            android:inputType="text"/>
+
+        <TextView
+            android:text="Time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="type a time you want"
+            android:inputType="text"/>
+
+        <TextView
+            android:text="Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="type a location you want"
+            android:inputType="text"/>
+
+        <TextView
+            android:text="Contact info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="type your contact information here"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:text="CREATE SESSION"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
