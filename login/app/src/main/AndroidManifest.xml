@@ -21,8 +21,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UserSpace" />
         <activity android:name=".CreateActivity" />
-        <activity android:name=".ResultDetail$SearchActivity" />
-        <activity android:name=".ResultDetail"></activity>
+        <activity android:name=".ResultDetail" />
+        <activity android:name=".SearchActivity" >
+        </activity>
     </application>
 
 </manifest>
