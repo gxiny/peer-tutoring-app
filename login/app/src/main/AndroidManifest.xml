@@ -20,7 +20,9 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UserSpace" />
-        <activity android:name=".CreateActivity"></activity>
+        <activity android:name=".CreateActivity" />
+        <activity android:name=".ResultDetail$SearchActivity" />
+        <activity android:name=".ResultDetail"></activity>
     </application>
 
 </manifest>
