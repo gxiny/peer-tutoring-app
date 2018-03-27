@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jz651.login.ResultDetail">
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subject"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:textSize="30dp"
+        android:textColor="#00009c"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="61dp"
+        android:textSize="30dp"
+        android:textColor="#00009c"/>
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="112dp"
+        android:textSize="30dp"
+        android:textColor="#00009c"/>
+
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="159dp"
+        android:textSize="30dp"
+        android:textColor="#00009c" />
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="30dp"
+            android:textColor="#00009c"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
