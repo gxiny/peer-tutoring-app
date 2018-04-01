@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jz651.login.SessionDetail">
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="subject"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="16dp"
+            android:textSize="30dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:text="Time"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="61dp"
+            android:textSize="30dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="#F0F8FF"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Location"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="112dp"
+            android:textSize="30dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Contact"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="159dp"
+            android:textSize="30dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="User"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="30dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <EditText
+            android:id="@+id/editInvite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="type the user name you want to invite"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/btnInvite"
+            android:text="INVITE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+        android:id="@+id/btnFinalize"
+        android:text="FINALIZE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
