@@ -122,6 +122,22 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"/>
 
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="rate"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
         <Button
             android:id="@+id/btnAppointment"
             android:layout_width="match_parent"

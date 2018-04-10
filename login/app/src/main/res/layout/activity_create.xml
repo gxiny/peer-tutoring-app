@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jz651.login.CreateActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/linearlayout"
         android:layout_centerVertical="true"
@@ -33,8 +36,20 @@
             android:id="@+id/editTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="type a time you want"
+            android:hint="the time you choose"
             android:inputType="text"/>
+
+        <Button
+            android:id="@+id/btnTime"
+            android:text="select time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnDate"
+            android:text="select date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:text="Location"
@@ -59,12 +74,58 @@
             android:layout_height="wrap_content"
             android:hint="type your contact information here"
             android:inputType="text"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Duration" />
 
+        <EditText
+            android:id="@+id/editDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="type how long the session will last(/h)"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voluntary" />
+
+        <RadioGroup
+            android:id="@+id/rgVoluntary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:id="@+id/rbYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rbNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
         <Button
             android:id="@+id/btnAdd"
             android:text="CREATE SESSION"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editInvite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="type the user name you want to invite"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/btnInvite"
+            android:text="INVITE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
+    </ScrollView>>
 
 </android.support.constraint.ConstraintLayout>

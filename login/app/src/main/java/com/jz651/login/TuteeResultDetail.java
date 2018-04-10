@@ -34,6 +34,9 @@ public class TuteeResultDetail extends AppCompatActivity {
     private TextView location;
     private TextView contact;
     private TextView user;
+    private TextView Duration;
+    private TextView Is_voluntary;
+    private TextView rate;
     private Button btnAppointment;
 
     private String a;
@@ -41,10 +44,14 @@ public class TuteeResultDetail extends AppCompatActivity {
     private String c;
     private String d;
     private String e;
+    private String f;
+    private String g;
+    private String h;
     private String session_id;
     private Integer temp;
     private String U_id;
     private String UserName;
+    private String is_voluntary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +63,9 @@ public class TuteeResultDetail extends AppCompatActivity {
         location = (TextView) findViewById(R.id.location);
         contact = (TextView) findViewById(R.id.contact);
         user = (TextView) findViewById(R.id.user);
+        Duration = (TextView)findViewById(R.id.duration);
+        Is_voluntary = (TextView)findViewById(R.id.is_voluntary);
+        rate = (TextView)findViewById(R.id.rate) ;
         btnAppointment = (Button) findViewById(R.id.btnAppointment);
 
         Intent i = getIntent();
@@ -76,11 +86,28 @@ public class TuteeResultDetail extends AppCompatActivity {
         e = "Name : ";
         e += list.get(5).toString();
 
+        f = "Duration : ";
+        f += list.get(6);
+        g = "Voluntary or Paid : ";
+        is_voluntary = list.get(7).toString();
+        if(is_voluntary.equals("1")){
+            g += "voluntary";
+        }
+        else if(is_voluntary.equals("0")){
+            g += "paid";
+        }
+
+        h = "Rate : ";
+        h += list.get(8).toString();
+
         subject.setText(a);
         time.setText(b);
         location.setText(c);
         contact.setText(d);
         user.setText(e);
+        Duration.setText(f);
+        Is_voluntary.setText(g);
+        rate.setText(h);
 
         btnAppointment.setOnClickListener(new View.OnClickListener() {
             @Override

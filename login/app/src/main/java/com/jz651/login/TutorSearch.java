@@ -36,8 +36,7 @@ public class TutorSearch extends AppCompatActivity implements AdapterView.OnItem
     private Integer U_id;
     private String UserName;
     private Button btnPre;
-    private String duration;
-    private String is_voluntary;
+
     //private TextView txResult;
 
     @Override
@@ -110,8 +109,9 @@ public class TutorSearch extends AppCompatActivity implements AdapterView.OnItem
                             String user=finalObject.getString("UserName");
                             Double temp_duration = finalObject.getDouble("duration");
                             Integer temp_is_volutary = finalObject.getInt("IS_VOLUNTARY");
-                            duration = temp_duration.toString();
-                            is_voluntary = temp_is_volutary.toString();
+                            String rate = finalObject.getString("rating");
+                            String duration = temp_duration.toString();
+                            String is_voluntary = temp_is_volutary.toString();
                             data.add(session_id);
                             data.add(sub);
                             data.add(time);
@@ -120,6 +120,7 @@ public class TutorSearch extends AppCompatActivity implements AdapterView.OnItem
                             data.add(user);
                             data.add(duration);
                             data.add(is_voluntary);
+                            data.add(rate);
                             datalist.add(data);
                         }
                         ListAdapter adapter = new ArrayAdapter<ArrayList>(TutorSearch.this,android.R.layout.simple_list_item_1,datalist);

@@ -29,6 +29,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/segoepr"
+        android:textColor="#00009c"
+        android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="10dp"/>
 

@@ -32,6 +32,8 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
     private TextView location;
     private TextView contact;
     private TextView user;
+    private TextView Duration;
+    private TextView Is_voluntary;
     private Button btnInvite;
     private Button btnFinalize;
     private EditText editInvite;
@@ -41,10 +43,14 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
     private String c;
     private String d;
     private String e;
+    private String f;
+    private String g;
     private String session_id;
     private Integer temp;
     private String U_id;
     private String UserName;
+    private String is_voluntary;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +60,8 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
         location = (TextView) findViewById(R.id.location);
         contact = (TextView) findViewById(R.id.contact);
         user = (TextView) findViewById(R.id.user);
+        Duration = (TextView)findViewById(R.id.duration);
+        Is_voluntary = (TextView)findViewById(R.id.is_voluntary);
         btnInvite = (Button) findViewById(R.id.btnInvite);
         btnFinalize = (Button)  findViewById(R.id.btnFinalize);
         editInvite = (EditText) findViewById(R.id.editInvite);
@@ -75,11 +83,24 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
         e = "Name : ";
         e += list.get(5).toString();
 
+        f = "Duration : ";
+        f += list.get(6);
+        g = "Voluntary or Paid : ";
+        is_voluntary = list.get(7).toString();
+        if(is_voluntary.equals("1")){
+            g += "voluntary";
+        }
+        else if(is_voluntary.equals("0")){
+            g += "paid";
+        }
+
         subject.setText(a);
         time.setText(b);
         location.setText(c);
         contact.setText(d);
         user.setText(e);
+        Duration.setText(f);
+        Is_voluntary.setText(g);
         progressDialog = new ProgressDialog(this);
         btnInvite.setOnClickListener(this);
         btnFinalize.setOnClickListener(new View.OnClickListener() {

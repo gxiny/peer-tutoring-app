@@ -14,15 +14,35 @@
         android:layout_height="match_parent">
     <TextView
         android:id="@+id/txWelcomemsg"
+        android:fontFamily="@font/segoepr"
+        android:textSize="35dp"
+        android:textColor="#00009c"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnCreate"
-        android:text="GO CREATE SESSION"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        <Button
+            android:id="@+id/btnTutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="As a Tutor" />
+
+        <Button
+            android:id="@+id/btnTutee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="As a tutee" />
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My profile" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log out" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

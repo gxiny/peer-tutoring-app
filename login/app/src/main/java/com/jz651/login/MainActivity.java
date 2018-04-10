@@ -13,8 +13,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private EditText etUserName,etPassword;
@@ -52,12 +55,19 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("error");
+
+
+
                             if(!success){
+
                                 String UserName = jsonResponse.getString("UserName");
                                 String Email = jsonResponse.getString("Email");
                                 int U_id = jsonResponse.getInt("user_id");
-                                System.out.println("User id get: "+U_id);
+                                //System.out.println("User id get: "+U_id);
+
+
                                 Intent intent = new Intent(MainActivity.this,UserSpace.class);
+
                                 intent.putExtra("Email",Email);
                                 intent.putExtra("UserName",UserName);
                                 intent.putExtra("user_id",U_id);

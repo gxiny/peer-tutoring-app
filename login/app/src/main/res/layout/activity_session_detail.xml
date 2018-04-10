@@ -20,10 +20,10 @@
             android:text="subject"
             tools:layout_editor_absoluteX="163dp"
             tools:layout_editor_absoluteY="16dp"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="#00009c"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp" />
 
@@ -35,10 +35,10 @@
             android:text="Time"
             tools:layout_editor_absoluteX="163dp"
             tools:layout_editor_absoluteY="61dp"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="#00009c"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:background="#F0F8FF"/>
@@ -52,10 +52,10 @@
             android:text="Location"
             tools:layout_editor_absoluteX="163dp"
             tools:layout_editor_absoluteY="112dp"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="#00009c"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"/>
 
@@ -68,10 +68,10 @@
             android:text="Contact"
             tools:layout_editor_absoluteX="163dp"
             tools:layout_editor_absoluteY="159dp"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="#00009c"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"/>
 
@@ -84,10 +84,42 @@
             android:text="User"
             tools:layout_editor_absoluteX="163dp"
             tools:layout_editor_absoluteY="211dp"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="#00009c"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Duration"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <TextView
+            android:id="@+id/is_voluntary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Voluntary or Paid"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"/>
 

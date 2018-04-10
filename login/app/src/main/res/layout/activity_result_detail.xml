@@ -11,56 +11,140 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/subject"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/subject"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:textSize="30dp"
-        android:textColor="#00009c"
-        />
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="subject"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="16dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Time"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="61dp"
-        android:textSize="30dp"
-        android:textColor="#00009c"/>
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:text="Time"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="61dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="#F0F8FF"/>
 
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Location"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="112dp"
-        android:textSize="30dp"
-        android:textColor="#00009c"/>
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Location"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="112dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
 
-    <TextView
-        android:id="@+id/contact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contact"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="159dp"
-        android:textSize="30dp"
-        android:textColor="#00009c" />
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Contact"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="159dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
 
         <TextView
             android:id="@+id/user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
             android:text="User"
             tools:layout_editor_absoluteX="163dp"
             tools:layout_editor_absoluteY="211dp"
-            android:textSize="30dp"
-            android:textColor="#00009c"/>
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Duration"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <TextView
+            android:id="@+id/is_voluntary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="Voluntary or Paid"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoepr"
+            android:background="#F0F8FF"
+            android:text="rate"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:textSize="20dp"
+            android:textColor="#00009c"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+
+        <Button
+            android:id="@+id/btnAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Make An Appointment" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

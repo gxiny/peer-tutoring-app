@@ -28,6 +28,8 @@ public class TuteeActivity extends AppCompatActivity {
     private int U_id;
     private ArrayList<String> NEWLIST,TODOLIST,FINISHEDLIST;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +47,7 @@ public class TuteeActivity extends AppCompatActivity {
         final String User_id = String.valueOf(U_id);
         UserName = intent.getStringExtra("UserName");
 
-        String welmsg = "Hi, No." + U_id + ","+UserName+" welcome to your tutee page";
+        String welmsg = "Hi " + UserName+" welcome to your tutee page";
         txWelMsg.setText(welmsg);
 
         NEWLIST = intent.getStringArrayListExtra("NEWSS");
@@ -78,6 +80,10 @@ public class TuteeActivity extends AppCompatActivity {
                             String Time = jsonObject.getString("time");
                             String Contact = jsonObject.getString("contact_info");
                             String UserName = jsonObject.getString("username");
+                            Double temp_duration = jsonObject.getDouble("duration");
+                            Integer temp_is_volutary = jsonObject.getInt("IS_VOLUNTARY");
+                            String duration = temp_duration.toString();
+                            String is_voluntary = temp_is_volutary.toString();
 
                             Intent intentDetail = new Intent(TuteeActivity.this,NotYetSSDetail.class);
                             ArrayList<String> list = new ArrayList<>();
@@ -87,6 +93,8 @@ public class TuteeActivity extends AppCompatActivity {
                             list.add(Location);
                             list.add(Contact);
                             list.add(UserName);
+                            list.add(duration);
+                            list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
                             TuteeActivity.this.startActivity(intentDetail);
@@ -121,6 +129,10 @@ public class TuteeActivity extends AppCompatActivity {
                             String Time = jsonObject.getString("time");
                             String Contact = jsonObject.getString("contact_info");
                             String UserName = jsonObject.getString("username");
+                            Double temp_duration = jsonObject.getDouble("duration");
+                            Integer temp_is_volutary = jsonObject.getInt("IS_VOLUNTARY");
+                            String duration = temp_duration.toString();
+                            String is_voluntary = temp_is_volutary.toString();
 
                             Intent intentDetail = new Intent(TuteeActivity.this,SessionDetail.class);
                             ArrayList<String> list = new ArrayList<>();
@@ -130,6 +142,8 @@ public class TuteeActivity extends AppCompatActivity {
                             list.add(Location);
                             list.add(Contact);
                             list.add(UserName);
+                            list.add(duration);
+                            list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
                             TuteeActivity.this.startActivity(intentDetail);
@@ -164,6 +178,10 @@ public class TuteeActivity extends AppCompatActivity {
                             String Time = jsonObject.getString("time");
                             String Contact = jsonObject.getString("contact_info");
                             String UserName = jsonObject.getString("username");
+                            Double temp_duration = jsonObject.getDouble("duration");
+                            Integer temp_is_volutary = jsonObject.getInt("IS_VOLUNTARY");
+                            String duration = temp_duration.toString();
+                            String is_voluntary = temp_is_volutary.toString();
 
                             Intent intentDetail = new Intent(TuteeActivity.this,FinishedSession.class);
                             ArrayList<String> list = new ArrayList<>();
@@ -173,6 +191,8 @@ public class TuteeActivity extends AppCompatActivity {
                             list.add(Location);
                             list.add(Contact);
                             list.add(UserName);
+                            list.add(duration);
+                            list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
                             TuteeActivity.this.startActivity(intentDetail);
@@ -193,7 +213,7 @@ public class TuteeActivity extends AppCompatActivity {
         btnCreateRQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentCreate = new Intent(TuteeActivity.this,CreateActivity.class);
+                Intent intentCreate = new Intent(TuteeActivity.this,TuteeCreate.class);
                 intentCreate.putExtra("user_id",U_id);
                 intentCreate.putExtra("UserName",UserName);
                 TuteeActivity.this.startActivity(intentCreate);

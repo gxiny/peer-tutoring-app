@@ -1,5 +1,7 @@
 package com.jz651.login;
-
+/**
+ * Created by 24565 on 2018/3/24.
+ */
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -20,6 +23,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +35,24 @@ public class ResultDetail extends AppCompatActivity {
     private TextView location;
     private TextView contact;
     private TextView user;
+    private TextView Duration;
+    private TextView Is_voluntary;
+    private TextView rate;
+    private Button btnAppointment;
 
     private String a;
     private String b;
     private String c;
     private String d;
     private String e;
-
+    private String f;
+    private String g;
+    private String h;
+    private String session_id;
+    private Integer temp;
+    private String U_id;
+    private String UserName;
+    private String is_voluntary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,123 +64,88 @@ public class ResultDetail extends AppCompatActivity {
         location = (TextView) findViewById(R.id.location);
         contact = (TextView) findViewById(R.id.contact);
         user = (TextView) findViewById(R.id.user);
+        Duration = (TextView)findViewById(R.id.duration);
+        Is_voluntary = (TextView)findViewById(R.id.is_voluntary);
+        rate = (TextView)findViewById(R.id.rate) ;
+        btnAppointment = (Button) findViewById(R.id.btnAppointment);
 
         Intent i = getIntent();
+        temp = i.getIntExtra("U_id",0);
+        U_id = Integer.toString(temp);
+        UserName = i.getStringExtra("UserName");
+        System.out.println("Uid : "+U_id);
         list = i.getStringArrayListExtra("list");
+        session_id = list.get(0).toString();
         a = "Subject : ";
-        a += list.get(0).toString();
+        a += list.get(1).toString();
         b = "Time : ";
-        b += list.get(1).toString();
+        b += list.get(2).toString();
         c = "Location : ";
-        c += list.get(2).toString();
+        c += list.get(3).toString();
         d = "Contact Information : ";
-        d += list.get(3).toString();
+        d += list.get(4).toString();
         e = "Name : ";
-        e += list.get(4).toString();
+        e += list.get(5).toString();
+        f = "Duration : ";
+        f += list.get(6);
+        g = "Voluntary or Paid : ";
+        is_voluntary = list.get(7).toString();
+        if(is_voluntary.equals("1")){
+            g += "voluntary";
+        }
+        else if(is_voluntary.equals("0")){
+            g += "paid";
+        }
+        h = "Rate : ";
+        h += list.get(8).toString();
 
         subject.setText(a);
         time.setText(b);
         location.setText(c);
         contact.setText(d);
         user.setText(e);
-    }
+        Duration.setText(f);
+        Is_voluntary.setText(g);
+        rate.setText(h);
 
-    /**
-     * Created by 24565 on 2018/3/24.
-     */
+        btnAppointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Response.Listener<String> responselistener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("error");
 
-    public static class SearchActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-        private String[] mStrs = {"ece590", "System Programming", "Server", "ece551"};
-        private SearchView search_view;
-        private ListView mListView;
-        private ListView list_results;
-        //private TextView txResult;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_search);
-            search_view = (SearchView) findViewById(R.id.search_view);
-            mListView = (ListView) findViewById(R.id.list_view);
-            list_results = (ListView) findViewById(R.id.list_results);
-            list_results.setOnItemClickListener(this);
-            search_view.setSubmitButtonEnabled(true);
-            mListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mStrs));
-            mListView.setTextFilterEnabled(true);
-            search_view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    Search(query);
-                    return true;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    if (!TextUtils.isEmpty(newText)) {
-                        mListView.setFilterText(newText);
-                    } else {
-                        mListView.clearTextFilter();
-                    }
-                    return false;
-                }
-            });
-        }
-
-        private void Search(String subject) {
-            //Log.d("Test",query);
-            Response.Listener<String> responselistener = new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONObject jsonResponse = new JSONObject(response);
-                        boolean success = jsonResponse.getBoolean("error");
-                        List<ArrayList> datalist = new ArrayList<>();
-                        if(!success){
-                            JSONArray jsonArray=jsonResponse.getJSONArray("result");
-                            ArrayList data = new ArrayList(5);
-                            for(int i=0;i<jsonArray.length();i++){
-                                JSONObject finalObject=jsonArray.getJSONObject(i);
-                                String sub=finalObject.getString("subject");
-                                String time=finalObject.getString("time");
-                                String location=finalObject.getString("location");
-                                String contact=finalObject.getString("contact_info");
-                                String user=finalObject.getString("UserName");
-
-                                data.add(sub);
-                                data.add(time);
-                                data.add(location);
-                                data.add(contact);
-                                data.add(user);
-                                datalist.add(data);
+                            if (!success) {
+                                Intent intent = new Intent(ResultDetail.this, UserSpace.class); //if make an appointment successful, jump back to userspace
+                                intent.putExtra("user_id",temp);
+                                intent.putExtra("UserName",UserName);
+                                ResultDetail.this.startActivity(intent);
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(ResultDetail.this);
+                                builder.setMessage("Failed to make an appointment");
+                                builder.setNegativeButton("Retry", null);
+                                builder.create();
+                                builder.show();
                             }
-                            ListAdapter adapter = new ArrayAdapter<ArrayList>(SearchActivity.this,android.R.layout.simple_list_item_1,datalist);
-                            list_results.setAdapter(adapter);
 
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                        else{
-                            AlertDialog.Builder builder = new AlertDialog.Builder(SearchActivity.this);
-                            builder.setMessage("No such subject exists");
-                            builder.setNegativeButton("Retry",null);
-                            builder.create();
-                            builder.show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+
                     }
-                }
-            };
-            SearchRequest searchRequest = new SearchRequest(subject, responselistener);
-            RequestQueue queue = Volley.newRequestQueue(SearchActivity.this);
-            queue.add(searchRequest);
-        }
+                };
+                AppointmentRequest appointmentRequest = new AppointmentRequest(session_id,U_id,responselistener);
+                RequestQueue queue = Volley.newRequestQueue(ResultDetail.this);
+                System.out.println("UserName in detail page = "+UserName);
+                queue.add(appointmentRequest);
+                //System.out.println("reach here!");
+            }
+        });
 
-        @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            Intent intent = new Intent(SearchActivity.this,ResultDetail.class);
-            ArrayList<String> list = ( ArrayList<String>)(list_results).getItemAtPosition(i);
-            intent.putStringArrayListExtra("list",list);
-            SearchActivity.this.startActivity(intent);
-        }
 
     }
 }
+

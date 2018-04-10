@@ -20,10 +20,19 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UserSpace" />
+        <activity android:name=".TutorSearch" />
         <activity android:name=".CreateActivity" />
+        <activity android:name=".TutorActivity" />
+        <activity android:name=".TuteeActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".ResultDetail" />
-        <activity android:name=".SearchActivity" >
-        </activity>
+        <activity android:name=".SessionDetail" />
+        <activity android:name=".FinishedSession" />
+        <activity android:name=".RateActivity" />
+        <activity android:name=".TuteeSearch" />
+        <activity android:name=".TuteeCreate" />
+        <activity android:name=".TuteeResultDetail" />
+        <activity android:name=".NotYetSSDetail"></activity>
     </application>
 
 </manifest>

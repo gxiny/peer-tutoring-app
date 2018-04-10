@@ -32,6 +32,8 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
     private TextView location;
     private TextView contact;
     private TextView user;
+    private TextView Duration;
+    private TextView Is_voluntary;
     private Button btnInvite;
     private EditText editInvite;
     private ProgressDialog progressDialog;
@@ -40,10 +42,14 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
     private String c;
     private String d;
     private String e;
+    private String f;
+    private String g;
     private String session_id;
     private Integer temp;
     private String U_id;
     private String UserName;
+    private String is_voluntary;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +60,8 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
         contact = (TextView) findViewById(R.id.contact);
         user = (TextView) findViewById(R.id.user);
         btnInvite = (Button) findViewById(R.id.btnInvite);
+        Duration = (TextView)findViewById(R.id.duration);
+        Is_voluntary = (TextView)findViewById(R.id.is_voluntary);
 
         editInvite = (EditText) findViewById(R.id.editInvite);
         Intent i = getIntent();
@@ -74,6 +82,17 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
         e = "Name : ";
         e += list.get(5).toString();
 
+        f = "Duration : ";
+        f += list.get(6);
+        g = "Voluntary or Paid : ";
+        is_voluntary = list.get(7).toString();
+        if(is_voluntary.equals("1")){
+            g += "voluntary";
+        }
+        else if(is_voluntary.equals("0")){
+            g += "paid";
+        }
+
         subject.setText(a);
         time.setText(b);
         location.setText(c);
@@ -81,7 +100,8 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
         user.setText(e);
         progressDialog = new ProgressDialog(this);
         btnInvite.setOnClickListener(this);
-
+        Duration.setText(f);
+        Is_voluntary.setText(g);
 
     }
     public void Invite(){

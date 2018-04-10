@@ -28,17 +28,22 @@ public class FinishedSession extends AppCompatActivity {
     private TextView contact;
     private TextView user;
     private Button btnRate;
+    private TextView Duration;
+    private TextView Is_voluntary;
     private ProgressDialog progressDialog;
     private String a;
     private String b;
     private String c;
     private String d;
     private String e;
+    private String f;
+    private String g;
     private String session_id;
     private Integer temp;
     private String U_id;
     private String UserName;
     private boolean is_rate;
+    private String is_voluntary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,9 @@ public class FinishedSession extends AppCompatActivity {
         contact = (TextView) findViewById(R.id.contact);
         user = (TextView) findViewById(R.id.user);
         btnRate = (Button) findViewById(R.id.btnRate);
+        Duration = (TextView)findViewById(R.id.duration);
+        Is_voluntary = (TextView)findViewById(R.id.is_voluntary);
+
         Intent i = getIntent();
         temp = i.getIntExtra("U_id", 0);
         U_id = Integer.toString(temp);
@@ -69,11 +77,26 @@ public class FinishedSession extends AppCompatActivity {
         d += list.get(4).toString();
         e = "Name : ";
         e += list.get(5).toString();
+        f = "Duration : ";
+        f += list.get(6);
+        g = "Voluntary or Paid : ";
+        is_voluntary = list.get(7).toString();
+        if(is_voluntary.equals("1")){
+            g += "voluntary";
+        }
+        else if(is_voluntary.equals("0")){
+            g += "paid";
+        }
+
+
         subject.setText(a);
         time.setText(b);
         location.setText(c);
         contact.setText(d);
         user.setText(e);
+        Duration.setText(f);
+        Is_voluntary.setText(g);
+
         progressDialog = new ProgressDialog(this);
         if (!is_rate) {
             btnRate.setOnClickListener(new View.OnClickListener() {
