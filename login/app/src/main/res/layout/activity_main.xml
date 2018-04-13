@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jz651.login.SessionDetail">
+    tools:context="com.jz651.Peer_Tutoring.SessionDetail">
 
     <LinearLayout
         android:id="@+id/linearlayout"
         android:layout_width="match_parent"
         android:layout_height="510dp"
         android:layout_centerVertical="true"
+        android:gravity="center"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
@@ -26,7 +27,7 @@
             android:paddingBottom="8dp"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:paddingTop="8dp"
+            android:paddingTop="0dp"
             android:text="Peer Tutoring App"
             android:textColor="#00009c"
             android:textSize="30dp"
@@ -68,13 +69,15 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginBottom="15dp"
+            android:gravity="center"
             android:text="@string/log_in" />
 
         <TextView
             android:id="@+id/tvRegister"
             android:layout_width="95dp"
             android:layout_height="30dp"
-
+            android:textSize="20dp"
+            android:gravity="center"
             android:text="@string/register_here" />
 
 

@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jz651.login.UserSpace">
+    tools:context="com.jz651.Peer_Tutoring.UserSpace">
 
     <LinearLayout
         android:id="@+id/linearlayouthome"
         android:layout_centerVertical="true"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
 
         <TextView
             android:id="@+id/txWelcomemsg"
@@ -45,6 +47,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log out" />
+
+        <ImageView
+            android:id="@+id/imageview1"
+            android:layout_width="211dp"
+            android:layout_height="127dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="right"
+            android:src="@drawable/a1" />
+
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

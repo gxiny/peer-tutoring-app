@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jz651.login">
+    package="com.jz651.Peer_Tutoring">
 
     <uses-permission android:name="android.permission.INTERNET" />
     >;
@@ -11,28 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.jz651.Peer_Tutoring.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".UserSpace" />
-        <activity android:name=".TutorSearch" />
-        <activity android:name=".CreateActivity" />
-        <activity android:name=".TutorActivity" />
-        <activity android:name=".TuteeActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ResultDetail" />
-        <activity android:name=".SessionDetail" />
-        <activity android:name=".FinishedSession" />
-        <activity android:name=".RateActivity" />
-        <activity android:name=".TuteeSearch" />
-        <activity android:name=".TuteeCreate" />
-        <activity android:name=".TuteeResultDetail" />
-        <activity android:name=".NotYetSSDetail"></activity>
+        <activity android:name="com.jz651.Peer_Tutoring.RegisterActivity" />
+        <activity android:name="com.jz651.Peer_Tutoring.UserSpace" />
+        <activity android:name="com.jz651.Peer_Tutoring.TutorSearch" />
+        <activity android:name="com.jz651.Peer_Tutoring.CreateActivity" />
+        <activity android:name="com.jz651.Peer_Tutoring.TutorActivity" />
+        <activity android:name="com.jz651.Peer_Tutoring.TuteeActivity" />
+        <activity android:name="com.jz651.Peer_Tutoring.ProfileActivity" />
+        <activity android:name="com.jz651.Peer_Tutoring.ResultDetail" />
+        <activity android:name="com.jz651.Peer_Tutoring.SessionDetail" />
+        <activity android:name="com.jz651.Peer_Tutoring.FinishedSession" />
+        <activity android:name="com.jz651.Peer_Tutoring.RateActivity" />
+        <activity android:name="com.jz651.Peer_Tutoring.TuteeSearch" />
+        <activity android:name="com.jz651.Peer_Tutoring.TuteeCreate" />
+        <activity android:name="com.jz651.Peer_Tutoring.TuteeResultDetail" />
+        <activity android:name="com.jz651.Peer_Tutoring.NotYetSSDetail"></activity>
     </application>
 
 </manifest>

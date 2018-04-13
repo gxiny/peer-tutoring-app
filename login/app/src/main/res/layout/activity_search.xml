@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="15dp"
     android:orientation="vertical"
-    tools:context="com.jz651.login.ResultDetail">
+    tools:context="com.jz651.Peer_Tutoring.ResultDetail">
 
     <SearchView
         android:id="@+id/search_view"
