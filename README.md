@@ -1,8 +1,9 @@
 peer tutoring mobile app 
 ==================================================
+### designed by group Novice_Programmer.
 sprint1 code
 -------------------------
-### designed by group Novice_Programmer.
+
 
 ### This code implemented functions listed below:
 
