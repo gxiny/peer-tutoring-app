@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			$response['message'] = "Inviation sent";
 		}else{
 			$response['error'] = true; 
-			$response['message'] = "Some error occurred please try again";			
+			$response['message'] = "User not exist";			
 		}
 	}else{
 		$response['error'] = true; 

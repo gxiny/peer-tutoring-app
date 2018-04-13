@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			isset($_POST['feedback']) and 
 				isset($_POST['user_id']) and 
 					isset($_POST['username'])and 
+					isset($_POST['commentee'])and 
 						isset($_POST['email']))
 		{
 		//operate the data further 
@@ -21,6 +22,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 										$_POST['feedback'],
 										$_POST['user_id'],
 										$_POST['username'],
+										$_POST['commentee'],
 										$_POST['email']
 								);
 		if($result == 1){
