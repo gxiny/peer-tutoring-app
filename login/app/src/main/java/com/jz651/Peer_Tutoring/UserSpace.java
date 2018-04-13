@@ -1,5 +1,6 @@
 package com.jz651.Peer_Tutoring;
 
+import android.app.Application;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,10 +19,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
+
 public class UserSpace extends AppCompatActivity {
     private TextView txWelMsg;
     private Button btnTutor,btnTutee,btnProfile,btnLogout;
-    private String UserName;
+    private static String UserName,Email;
     private int U_id;
 
     @Override
@@ -38,13 +40,15 @@ public class UserSpace extends AppCompatActivity {
 
         Intent intent = getIntent();
         UserName = intent.getStringExtra("UserName");
-        System.out.println("Userspace : UserName :"+UserName);
+        Email = intent.getStringExtra("Email");
+        final GlobalVariable GlobalEmail = (GlobalVariable)this.getApplicationContext();
+
+        //System.out.println("Userspace : UserName :"+UserName);
         U_id = intent.getIntExtra("user_id",0);
         final String User_id = String.valueOf(U_id);
         String WelMsg = "Hi " + UserName + " , Welcome !";
 
         txWelMsg.setText(WelMsg);
-
 
         btnTutor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +108,7 @@ public class UserSpace extends AppCompatActivity {
 
                             createIntent.putExtra("user_id",U_id);
                             createIntent.putExtra("UserName",UserName);
+                            createIntent.putExtra("email",Email);
                             UserSpace.this.startActivity(createIntent);
 
                         } catch (JSONException e) {
@@ -216,9 +221,26 @@ public class UserSpace extends AppCompatActivity {
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent createIntent = new Intent(UserSpace.this,ProfileActivity.class);
-                createIntent.putExtra("user_id",U_id);
-                UserSpace.this.startActivity(createIntent);
+                Response.Listener<String> listener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            final int balance = jsonObject.getInt("balance");
+                            Intent createIntent = new Intent(UserSpace.this,ProfileActivity.class);
+                            createIntent.putExtra("user_id",U_id);
+                            createIntent.putExtra("username",UserName);
+                            createIntent.putExtra("email",Email);
+                            createIntent.putExtra("balance",balance);
+                            UserSpace.this.startActivity(createIntent);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                BalanceRequest balanceRequest = new BalanceRequest(User_id,listener);
+                RequestQueue requestQueue = Volley.newRequestQueue(UserSpace.this);
+                requestQueue.add(balanceRequest);
             }
         });
 
@@ -230,4 +252,5 @@ public class UserSpace extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,7 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
     private RadioGroup rgVoluntary;
     private RadioButton rbChoice;
     private ProgressDialog progressDialog;
+    private String Owner;
     int hour_x,minute_x;
     int year_x,month_x,day_x;
     StringBuffer dateBuffer=new StringBuffer();
@@ -49,6 +51,7 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_create);
         Intent intent = getIntent();
         U_id = intent.getIntExtra("user_id",0);
+        Owner = intent.getStringExtra("UserName");
         editSub = (EditText)findViewById(R.id.editSubject);
         editTime= (EditText)findViewById(R.id.editTime);
         editLoc = (EditText)findViewById(R.id.editLocation);
@@ -99,7 +102,22 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
                             JSONObject jsonObject = new JSONObject(response);
                             Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
                             session_id.append(jsonObject.getString("session_id"));
-                            System.out.println(session_id.toString());
+                            boolean success = jsonObject.getBoolean("error");
+                            //System.out.println(session_id.toString());
+                            if (!success) {
+                                Intent intent = new Intent(CreateActivity.this, UserSpace.class); //if make an appointment successful, jump back to userspace
+                                intent.putExtra("user_id",U_id);
+                                intent.putExtra("UserName",Owner);
+                                CreateActivity.this.startActivity(intent);
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(CreateActivity.this);
+                                builder.setMessage("Failed to create a session");
+                                builder.setNegativeButton("Retry", null);
+                                builder.create();
+                                builder.show();
+                            }
+
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

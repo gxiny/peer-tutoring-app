@@ -107,22 +107,24 @@
                 android:layout_height="wrap_content"
                 android:text="No" />
         </RadioGroup>
-        <Button
-            android:id="@+id/btnAdd"
-            android:text="CREATE SESSION"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+
 
         <EditText
             android:id="@+id/editInvite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="type the user name you want to invite"
+            android:hint="type the user name you want to invite(optional)"
             android:inputType="text"/>
 
         <Button
             android:id="@+id/btnInvite"
             android:text="INVITE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:text="CREATE SESSION"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

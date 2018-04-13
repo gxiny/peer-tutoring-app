@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +44,7 @@ public class TuteeCreate extends AppCompatActivity implements View.OnClickListen
     StringBuffer dateBuffer=new StringBuffer();
     StringBuffer timeBuffer=new StringBuffer();
     private int U_id;
+    private String Owner;
     private StringBuffer session_id=new StringBuffer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class TuteeCreate extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_tutee_create);
         Intent intent = getIntent();
         U_id = intent.getIntExtra("user_id",0);
+        Owner = intent.getStringExtra("UserName");
         editSub = (EditText)findViewById(R.id.editSubject);
         editTime= (EditText)findViewById(R.id.editTime);
         editLoc = (EditText)findViewById(R.id.editLocation);
@@ -100,7 +103,21 @@ public class TuteeCreate extends AppCompatActivity implements View.OnClickListen
                             JSONObject jsonObject = new JSONObject(response);
                             Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
                             session_id.append(jsonObject.getString("session_id"));
-                            System.out.println(session_id.toString());
+                            //System.out.println(session_id.toString());
+                            boolean success = jsonObject.getBoolean("error");
+                            if (!success) {
+                                Intent intent = new Intent(TuteeCreate.this, UserSpace.class); //if make an appointment successful, jump back to userspace
+                                intent.putExtra("user_id",U_id);
+                                intent.putExtra("UserName",Owner);
+                                TuteeCreate.this.startActivity(intent);
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(TuteeCreate.this);
+                                builder.setMessage("Failed to create a session");
+                                builder.setNegativeButton("Retry", null);
+                                builder.create();
+                                builder.show();
+                            }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
