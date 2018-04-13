@@ -30,18 +30,18 @@
         <TextView
             android:id="@+id/time"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
+            android:background="#F0F8FF"
             android:fontFamily="@font/segoepr"
-            android:text="Time"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="61dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:background="#F0F8FF"/>
+            android:paddingTop="4dp"
+            android:text="Time"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="61dp" />
 
         <TextView
             android:id="@+id/location"
@@ -62,34 +62,34 @@
         <TextView
             android:id="@+id/contact"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
+            android:layout_height="38dp"
             android:background="#F0F8FF"
-            android:text="Contact"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="159dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="4dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="4dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:paddingTop="4dp"
+            android:text="Contact"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="159dp" />
 
         <TextView
             android:id="@+id/user"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
+            android:layout_height="38dp"
             android:background="#F0F8FF"
-            android:text="User"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="211dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="4dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="4dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:paddingTop="4dp"
+            android:text="User"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp" />
 
         <TextView
             android:id="@+id/duration"
@@ -141,6 +141,12 @@
         android:text="FINALIZE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
 
 
     </LinearLayout>

@@ -32,7 +32,8 @@ public class RateActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final int U_id = intent.getIntExtra("U_id",0);
-        final String username = intent.getStringExtra("UserName");
+        final String username = intent.getStringExtra("commentee");
+        final String commentor = intent.getStringExtra("commentor");
         final String ID = String.valueOf(U_id);
         System.out.println("User id ----------------------------------------->: "+ID+" Name------------->:"+username);
         bSubmit.setOnClickListener(new View.OnClickListener() {
@@ -66,10 +67,11 @@ public class RateActivity extends AppCompatActivity {
 //                            System.out.println(Name);
 
                             if(!error){
+                                System.out.println("this is commentor name : "+commentor);
 
                                 Intent intent = new Intent(RateActivity.this, UserSpace.class);
                                 intent.putExtra("user_id",U_id);
-                                intent.putExtra("UserName",username);
+                                intent.putExtra("UserName",commentor);
                                 RateActivity.this.startActivity(intent);
                             }
                             else{
@@ -81,10 +83,9 @@ public class RateActivity extends AppCompatActivity {
 
                     }
                 };
+                System.out.println("this is commentee name : "+username);
 
-                System.out.println(Rate);
-
-                Feedback feedbackRequest = new Feedback(ID,Name,Email,Comment, Rate,responselistener);
+                Feedback feedbackRequest = new Feedback(ID,Name,username,Email,Comment, Rate,responselistener);
                 RequestQueue queue = Volley.newRequestQueue(RateActivity.this);
                 queue.add(feedbackRequest);
             }

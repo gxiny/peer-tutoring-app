@@ -32,7 +32,6 @@ import java.util.Map;
 
 public class CreateActivity extends AppCompatActivity implements View.OnClickListener{
 
-
     private EditText editSub,editTime,editLoc,editContact,editInvite,editDuration;
     private Button btnAdd,btnDate,btnTime,btnInvite;
     private RadioGroup rgVoluntary;

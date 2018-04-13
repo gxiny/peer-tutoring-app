@@ -24,7 +24,7 @@ public class TutorActivity extends AppCompatActivity {
     private TextView txWelMsg;
     private ListView NewSS, AppointedSS, FinishedSS;
     private Button btnCreateSS,btnSearchRQ;
-    private String UserName;
+    private String Owner;
     private int U_id;
     private ArrayList<String> NEWLIST,TODOLIST,FINISHEDLIST;
 
@@ -44,10 +44,11 @@ public class TutorActivity extends AppCompatActivity {
 
         final Intent intent = getIntent();
         U_id = intent.getIntExtra("user_id",0);
+        //System.out.println("TutorActivity : user_id :"+U_id);
         final String User_id = String.valueOf(U_id);
-        UserName = intent.getStringExtra("UserName");
-
-        String welmsg = "Hi " +UserName+" welcome to your tutor page";
+        Owner = intent.getStringExtra("UserName");
+       // System.out.println("TutorActivity : user_id :"+Owner);
+        String welmsg = "Hi " +Owner+" welcome to your tutor page";
         txWelMsg.setText(welmsg);
 
         NEWLIST = intent.getStringArrayListExtra("NEWSS");
@@ -100,6 +101,7 @@ public class TutorActivity extends AppCompatActivity {
                             list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
+                            intentDetail.putExtra("UserName",Owner);
                             TutorActivity.this.startActivity(intentDetail);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -150,6 +152,7 @@ public class TutorActivity extends AppCompatActivity {
                             list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
+                            intentDetail.putExtra("UserName",Owner);
                             TutorActivity.this.startActivity(intentDetail);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -219,7 +222,7 @@ public class TutorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentCreate = new Intent(TutorActivity.this,CreateActivity.class);
                 intentCreate.putExtra("user_id",U_id);
-                intentCreate.putExtra("UserName",UserName);
+                intentCreate.putExtra("UserName",Owner);
                 TutorActivity.this.startActivity(intentCreate);
             }
         });
@@ -229,7 +232,7 @@ public class TutorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentSearch = new Intent(TutorActivity.this,TutorSearch.class);
                 intentSearch.putExtra("user_id",U_id);
-                intentSearch.putExtra("UserName",UserName);
+                intentSearch.putExtra("UserName",Owner);
                 TutorActivity.this.startActivity(intentSearch);
             }
         });

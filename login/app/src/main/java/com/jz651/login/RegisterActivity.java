@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -18,6 +19,10 @@ import org.json.JSONObject;
 public class RegisterActivity extends AppCompatActivity {
     private EditText etEmail,etUserName,etPassword;
     private Button btnRegister;
+    private String error1="Password is too short, should be larger than 8 characters";
+    private String error2="Password should contain at least one number";
+    private String error3="Password should contain at least one upper letter";
+    private String error4="Password should contain at least one symobl";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,22 @@ public class RegisterActivity extends AppCompatActivity {
                 final String UserName = etUserName.getText().toString();
                 final String Password = etPassword.getText().toString();
                 final String Email = etEmail.getText().toString();
-
+                if(Password.length()<8){
+                    Toast.makeText(getApplicationContext(),error1,Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!check1(Password)){
+                    Toast.makeText(getApplicationContext(),error2,Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!check2(Password)){
+                    Toast.makeText(getApplicationContext(),error3,Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!check3(Password)){
+                    Toast.makeText(getApplicationContext(),error4,Toast.LENGTH_LONG).show();
+                    return;
+                }
                 Response.Listener<String> responselistener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -67,5 +87,50 @@ public class RegisterActivity extends AppCompatActivity {
                 queue.add(registerRequest);
             }
         });
+    }
+    private boolean check1(String str){
+        char[] chars=str.toCharArray();
+        for(int i=0;i<chars.length;++i){
+            if(isNum(chars[i])){
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean check2(String str){
+        char[] chars=str.toCharArray();
+        for(int i=0;i<chars.length;++i){
+            if(isUpper(chars[i])){
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean check3(String str){
+        char[] chars=str.toCharArray();
+        for(int i=0;i<chars.length;++i){
+            if(isSimp(chars[i])){
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean isNum(char c){
+        if(c<'0'||c>'9'){
+            return false;
+        }
+        return true;
+    }
+    private boolean isUpper(char c){
+        if(c<'A'||c>'Z'){
+            return false;
+        }
+        return true;
+    }
+    private boolean isSimp(char c){
+        if((c>='!'&&c<='/')|| (c>=':'&&c<='@')||(c>='['&&c<='`')||(c>='{'&&c<='~') ){
+            return true;
+        }
+        return false;
     }
 }

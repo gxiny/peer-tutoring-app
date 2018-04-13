@@ -40,6 +40,7 @@ public class UserSpace extends AppCompatActivity {
 
         Intent intent = getIntent();
         UserName = intent.getStringExtra("UserName");
+        System.out.println("Userspace : UserName :"+UserName);
         U_id = intent.getIntExtra("user_id",0);
         final String User_id = String.valueOf(U_id);
         String WelMsg = "Hi " + UserName + " , Welcome !";

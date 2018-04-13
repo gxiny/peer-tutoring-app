@@ -77,6 +77,7 @@ public class FinishedSession extends AppCompatActivity {
         d += list.get(4).toString();
         e = "Name : ";
         e += list.get(5).toString();
+        final String commentee = list.get(5).toString();
         f = "Duration : ";
         f += list.get(6);
         g = "Voluntary or Paid : ";
@@ -97,6 +98,8 @@ public class FinishedSession extends AppCompatActivity {
         Duration.setText(f);
         Is_voluntary.setText(g);
 
+        System.out.println("this is rate flag : "+ is_rate);
+
         progressDialog = new ProgressDialog(this);
         if (!is_rate) {
             btnRate.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +108,9 @@ public class FinishedSession extends AppCompatActivity {
                     is_rate = true;
                     Intent intentRate = new Intent(FinishedSession.this, RateActivity.class);
                     intentRate.putExtra("U_id", temp);
-                    intentRate.putExtra("UserName", e);
+                    intentRate.putExtra("commentee", commentee);
+                    System.out.println("this is commentor name : "+ UserName);
+                    intentRate.putExtra("commentor", UserName);
                     FinishedSession.this.startActivity(intentRate);
                 }
             });

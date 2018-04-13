@@ -11,117 +11,118 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/subject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
+            android:layout_height="46dp"
             android:background="#F0F8FF"
-            android:text="subject"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="16dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="8dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp" />
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="subject"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="16dp" />
 
         <TextView
             android:id="@+id/time"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
+            android:background="#F0F8FF"
             android:fontFamily="@font/segoepr"
-            android:text="Time"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="61dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:background="#F0F8FF"/>
+            android:paddingTop="8dp"
+            android:text="Time"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="61dp" />
 
         <TextView
             android:id="@+id/location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
             android:background="#F0F8FF"
-            android:text="Location"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="112dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="8dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="Location"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="112dp" />
 
         <TextView
             android:id="@+id/contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
             android:background="#F0F8FF"
-            android:text="Contact"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="159dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="8dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="Contact"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="159dp" />
 
         <TextView
             android:id="@+id/user"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
+            android:layout_height="45dp"
             android:background="#F0F8FF"
-            android:text="User"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="211dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="8dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="User"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp" />
 
         <TextView
             android:id="@+id/duration"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
+            android:layout_height="46dp"
             android:background="#F0F8FF"
-            android:text="Duration"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="211dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="8dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="Duration"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp" />
 
         <TextView
             android:id="@+id/is_voluntary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/segoepr"
             android:background="#F0F8FF"
-            android:text="Voluntary or Paid"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="211dp"
-            android:textSize="20dp"
-            android:textColor="#00009c"
-            android:paddingTop="8dp"
+            android:fontFamily="@font/segoepr"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="Voluntary or Paid"
+            android:textColor="#00009c"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="211dp" />
 
         <EditText
             android:id="@+id/editInvite"
@@ -132,9 +133,15 @@
 
         <Button
             android:id="@+id/btnInvite"
-            android:text="INVITE"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="INVITE" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -24,7 +24,7 @@ public class TuteeActivity extends AppCompatActivity {
     private TextView txWelMsg;
     private ListView NewSS, AppointedSS, FinishedSS;
     private Button btnCreateRQ,btnSearchSS;
-    private String UserName;
+    private String UserName, Owner;
     private int U_id;
     private ArrayList<String> NEWLIST,TODOLIST,FINISHEDLIST;
 
@@ -45,9 +45,9 @@ public class TuteeActivity extends AppCompatActivity {
         final Intent intent = getIntent();
         U_id = intent.getIntExtra("user_id",0);
         final String User_id = String.valueOf(U_id);
-        UserName = intent.getStringExtra("UserName");
 
-        String welmsg = "Hi " + UserName+" welcome to your tutee page";
+        Owner = intent.getStringExtra("UserName") ;
+        String welmsg = "Hi " + Owner+" welcome to your tutee page";
         txWelMsg.setText(welmsg);
 
         NEWLIST = intent.getStringArrayListExtra("NEWSS");
@@ -97,6 +97,7 @@ public class TuteeActivity extends AppCompatActivity {
                             list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
+                            intentDetail.putExtra("UserName",Owner);
                             TuteeActivity.this.startActivity(intentDetail);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -146,6 +147,7 @@ public class TuteeActivity extends AppCompatActivity {
                             list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
+                            intentDetail.putExtra("UserName",Owner);
                             TuteeActivity.this.startActivity(intentDetail);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -195,6 +197,7 @@ public class TuteeActivity extends AppCompatActivity {
                             list.add(is_voluntary);
                             intentDetail.putStringArrayListExtra("list",list);
                             intentDetail.putExtra("U_id",U_id);
+                            intentDetail.putExtra("UserName",Owner);
                             TuteeActivity.this.startActivity(intentDetail);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -215,7 +218,7 @@ public class TuteeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentCreate = new Intent(TuteeActivity.this,TuteeCreate.class);
                 intentCreate.putExtra("user_id",U_id);
-                intentCreate.putExtra("UserName",UserName);
+                intentCreate.putExtra("UserName",Owner);
                 TuteeActivity.this.startActivity(intentCreate);
             }
         });
@@ -225,7 +228,7 @@ public class TuteeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentSearch = new Intent(TuteeActivity.this,TuteeSearch.class);
                 intentSearch.putExtra("user_id",U_id);
-                intentSearch.putExtra("UserName",UserName);
+                intentSearch.putExtra("UserName",Owner);
                 TuteeActivity.this.startActivity(intentSearch);
             }
         });

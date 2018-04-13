@@ -2,6 +2,7 @@ package com.jz651.login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,7 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
     private TextView Duration;
     private TextView Is_voluntary;
     private Button btnInvite;
+    private Button btnCancel;
     private EditText editInvite;
     private ProgressDialog progressDialog;
     private String a;
@@ -60,6 +62,7 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
         contact = (TextView) findViewById(R.id.contact);
         user = (TextView) findViewById(R.id.user);
         btnInvite = (Button) findViewById(R.id.btnInvite);
+        btnCancel = (Button) findViewById(R.id.btnCancel);
         Duration = (TextView)findViewById(R.id.duration);
         Is_voluntary = (TextView)findViewById(R.id.is_voluntary);
 
@@ -68,6 +71,7 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
         temp = i.getIntExtra("U_id",0);
         U_id = Integer.toString(temp);
         UserName = i.getStringExtra("UserName");
+        System.out.println("not_yet_ssDetail 1: UserName :"+UserName);
         System.out.println("Uid--->>>>>> : "+U_id);
         list = i.getStringArrayListExtra("list");
         session_id = list.get(0).toString();
@@ -100,8 +104,47 @@ public class NotYetSSDetail extends AppCompatActivity implements View.OnClickLis
         user.setText(e);
         progressDialog = new ProgressDialog(this);
         btnInvite.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
         Duration.setText(f);
         Is_voluntary.setText(g);
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Response.Listener<String> responselistener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("error");
+
+                            if(!success){
+                                Intent intent = new Intent(NotYetSSDetail.this, UserSpace.class);
+                                intent.putExtra("user_id",temp);
+                                intent.putExtra("UserName",UserName);
+                                //System.out.println("not_yet_ssDetail : user_id :"+temp);
+                                System.out.println("not_yet_ssDetail : UserName :"+UserName);
+                                NotYetSSDetail.this.startActivity(intent);
+                            }
+                            else{
+                                AlertDialog.Builder builder = new AlertDialog.Builder(NotYetSSDetail.this);
+                                builder.setMessage("Failed to cancel");
+                                builder.setNegativeButton("Retry",null);
+                                builder.create();
+                                builder.show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                };
+                CancelRequest cancelRequest = new CancelRequest(U_id,session_id,responselistener);
+                RequestQueue queue = Volley.newRequestQueue(NotYetSSDetail.this);
+                queue.add(cancelRequest);
+            }
+        });
+
 
     }
     public void Invite(){

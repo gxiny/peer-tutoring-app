@@ -9,11 +9,13 @@
     <LinearLayout
         android:id="@+id/linearlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="510dp"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="139dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
+
 
         <TextView
             android:id="@+id/textView"
@@ -52,7 +54,7 @@
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="250dp"
-            android:layout_height="40dp"
+            android:layout_height="59dp"
             android:layout_marginBottom="33dp"
             android:layout_marginEnd="3dp"
             android:layout_marginStart="3dp"
@@ -65,20 +67,17 @@
             android:id="@+id/bLogin"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginBottom="45dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/log_in" />
 
         <TextView
             android:id="@+id/tvRegister"
             android:layout_width="95dp"
             android:layout_height="30dp"
-            android:layout_marginBottom="104dp"
+
             android:text="@string/register_here" />
 
 
+
     </LinearLayout>
-    </android.support.constraint.ConstraintLayout>
-
-
-
-
+</android.support.constraint.ConstraintLayout>

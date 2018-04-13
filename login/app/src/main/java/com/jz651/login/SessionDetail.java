@@ -2,6 +2,7 @@ package com.jz651.login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,7 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
     private TextView Is_voluntary;
     private Button btnInvite;
     private Button btnFinalize;
+    private Button btnCancel;
     private EditText editInvite;
     private ProgressDialog progressDialog;
     private String a;
@@ -64,7 +66,9 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
         Is_voluntary = (TextView)findViewById(R.id.is_voluntary);
         btnInvite = (Button) findViewById(R.id.btnInvite);
         btnFinalize = (Button)  findViewById(R.id.btnFinalize);
+        btnCancel = (Button) findViewById(R.id.btnCancel);
         editInvite = (EditText) findViewById(R.id.editInvite);
+
         Intent i = getIntent();
         temp = i.getIntExtra("U_id",0);
         U_id = Integer.toString(temp);
@@ -103,6 +107,7 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
         Is_voluntary.setText(g);
         progressDialog = new ProgressDialog(this);
         btnInvite.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
         btnFinalize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,6 +132,42 @@ public class SessionDetail extends AppCompatActivity implements View.OnClickList
             }
         });
 
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Response.Listener<String> responselistener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("error");
+
+                            if(!success){
+                                Intent intent = new Intent(SessionDetail.this, UserSpace.class);
+                                intent.putExtra("user_id",temp);
+                                intent.putExtra("UserName",UserName);
+                                //System.out.println("not_yet_ssDetail : user_id :"+temp);
+                                System.out.println("not_yet_ssDetail : UserName :"+UserName);
+                                SessionDetail.this.startActivity(intent);
+                            }
+                            else{
+                                AlertDialog.Builder builder = new AlertDialog.Builder(SessionDetail.this);
+                                builder.setMessage("Failed to cancel");
+                                builder.setNegativeButton("Retry",null);
+                                builder.create();
+                                builder.show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                };
+                CancelRequest cancelRequest = new CancelRequest(U_id,session_id,responselistener);
+                RequestQueue queue = Volley.newRequestQueue(SessionDetail.this);
+                queue.add(cancelRequest);
+            }
+        });
     }
     public void Invite(){
         final String guest = editInvite.getText().toString().trim();
