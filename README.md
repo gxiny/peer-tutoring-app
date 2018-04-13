@@ -36,10 +36,12 @@ For frontend, we use [Android Studio](https://en.wikipedia.org/wiki/Android_Stud
 
 ## Additional Files
 This is our [project plan](https://gitlab.oit.duke.edu/xg41/ece651_novice_programmer/blob/master/Project%20Plan.pdf).
+
 This is our [user story](https://gitlab.oit.duke.edu/xg41/ece651_novice_programmer/blob/master/User_story.pdf).
 
 ## Test
 This part identifies how we carried out Unit Test, Component Test and System Test as well as defines roles and responsibilities in testing schedule.
+
 This is our [test plan](https://gitlab.oit.duke.edu/xg41/ece651_novice_programmer/blob/master/Test%20Plan.pdf).
 
 
