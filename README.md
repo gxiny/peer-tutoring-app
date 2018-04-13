@@ -35,7 +35,8 @@ For frontend, we use [Android Studio](https://en.wikipedia.org/wiki/Android_Stud
 ![Key API](https://i.imgur.com/uMbkKv8.jpg)
 
 ## Additional Files
-
+This is our [project plan](https://sakai.duke.edu/access/content/user/xz197%40duke.edu/Project%20Plan.pdf).
+This is our [user story](https://sakai.duke.edu/access/content/user/xz197%40duke.edu/User_story.pdf).
 
 ## Test
 This part identifies how we carried out Unit Test, Component Test and System Test as well as defines roles and responsibilities in testing schedule.
