@@ -49,7 +49,7 @@ Peer Tutoring Mobile App
 ## Key API
 For backend, we use [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) in this project, which L stands for [Linux](https://en.wikipedia.org/wiki/Linux), A stands for [Apache](https://en.wikipedia.org/wiki/Apache_HTTP_Server), M stands for [MySQL](https://en.wikipedia.org/wiki/MySQL), and P stands for [PHP](https://en.wikipedia.org/wiki/PHP).
 For frontend, we use [Android Studio](https://en.wikipedia.org/wiki/Android_Studio) to develop and emulate. 
-![Key API](https://i.imgur.com/uMbkKv8.jpg)
+![Key API](https://i.imgur.com/rR9EWo7.jpg)
 
 ## Additional Files
 This is our [project plan](https://gitlab.oit.duke.edu/xg41/ece651_novice_programmer/blob/master/Project%20Plan.pdf).
