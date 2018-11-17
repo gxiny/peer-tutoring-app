@@ -24,23 +24,14 @@ Peer Tutoring Mobile App
 ## Support Manual
 ### Below are some tips when using our app.
 ### 1.  register
-### Note that the password should be longer than 8 characters. Also, the password must contain at least one symbol, one number and one upper letter. If the password does not meet the limits, the registration will fail.
-<img src="https://i.imgur.com/U41GuLN.png" width="360" height="640" alt="password should be longer than 8 characters" align=center />
-<img src="https://i.imgur.com/s0Pe2pT.png" width="360" height="640" alt="password should contain at least one symbol" align=center />
-<img src="https://i.imgur.com/a3UHhoA.png" width="360" height="640" alt="password should contain at least one number" align=center />
-<img src="https://i.imgur.com/LcMKfv8.png" width="360" height="640" alt="password should contain at least one upper letter" align=center />
+
 ### 2. Session Creation
-### When creating a session, instead of inputing a time by hand, users can choose time using the "select time" and "select date" button.
-<img src="https://i.imgur.com/Erbfbl0.png" width="360" height="640" alt="session creation" align=center />
+
 ### 3. Search Session
-### When searching a session, users should search by subject.
-<img src="https://i.imgur.com/dxPnVIB.png" width="360" height="640" alt="search session" align=center />
+
 ### 4. Invite
-### When inviting a person, this person must be a registered user. If not, the invitation will not be allowed.
-<img src="https://i.imgur.com/63M0yGN.png" width="360" height="640" alt="invite" align=center />
+
 ### 5. Balance
-### The balance actually shows the difference in values of tutor time(except voluntory time) and tutee time. This means balance = tutor time(except for voluntary time)-tutee time.
-<img src="https://i.imgur.com/naCvzC9.png" width="360" height="640" alt="profile my invitation" align=center />
 
 
 ## Code Structure
